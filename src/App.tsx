@@ -1,22 +1,16 @@
-import React from "react";
-import "./App.css";
+import React, { useEffect, useState } from "react";
+import ShowingTextEveryLetter from "./Components/ShowingTextEveryLetter";
+
+import "./styles/base.scss";
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <ShowingTextEveryLetter
+        text="Fullstack Developer"
+        heading="h1"
+        fontSizeRem={5}
+      />
     </div>
   );
 }
