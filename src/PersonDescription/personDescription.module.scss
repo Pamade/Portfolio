@@ -1,0 +1,66 @@
+@use "../styles/variables.scss" as variable;
+$name_width_desktop: 20%;
+$name_width_mobile: 50%;
+
+@mixin slidingBorder($width) {
+  @keyframes slidingBorder {
+    from {
+      width: 0%;
+    }
+    to {
+      width: $width;
+    }
+  }
+  animation: slidingBorder 2s;
+}
+.content_header_mobile {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  margin: 0 auto;
+  animation-delay: 3s;
+}
+
+.name {
+  padding-bottom: 1rem;
+  border-bottom: 4px solid variable.$main-color;
+  font-size: 1.3rem;
+  @include slidingBorder($name_width_mobile);
+  width: $name_width_mobile;
+}
+
+.h2 {
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5rem;
+}
+
+@media (min-width: 760px) {
+  .h2 {
+    width: 100%;
+    font-size: 2rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .h2 {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 2.25rem;
+  }
+  .name {
+    width: $name_width_desktop;
+    @include slidingBorder($name_width_desktop);
+  }
+  .description {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width: 1600px) {
+  .h2 {
+    width: 100%;
+    font-size: 2.5rem;
+  }
+}

@@ -1,15 +1,35 @@
 @use "../styles/variables.scss" as variable;
+@use "../Layouts/DesktopLayout/DesktopLayout.scss";
+@use "../Layouts/MobileLayout/MobileLayout.scss";
+
+@keyframes h2FromBotToTop {
+  from {
+    margin-top: 100vh;
+  }
+  to {
+    margin-top: 0;
+  }
+}
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  overflow-y: scroll;
 }
 
 .App {
   font-family: "acumin-pro", sans-serif;
   color: variable.$main-color;
   background-color: variable.$background;
-
+  overflow-y: hidden;
   min-height: 100vh;
+}
+
+#main {
+  animation: h2FromBotToTop 2s;
+}
+
+::-webkit-scrollbar {
+  display: none;
 }

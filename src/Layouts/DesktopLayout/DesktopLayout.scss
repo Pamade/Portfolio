@@ -1,0 +1,19 @@
+#desktop_layout {
+  display: none;
+}
+
+@media (min-width: 1200px) {
+  #desktop_layout {
+    display: flex;
+    flex-direction: column;
+    gap: 5rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width: 1600px) {
+  #desktop_layout {
+    width: 50%;
+  }
+}

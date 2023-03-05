@@ -1,0 +1,41 @@
+@use "../styles/variables.scss" as variable;
+
+@keyframes goToTop {
+  from {
+    padding-top: 25vh;
+  }
+  to {
+    padding-top: 10vh;
+  }
+}
+
+@keyframes fromSmallMargin {
+  from {
+    transform: translate(-30%);
+  }
+  to {
+    transform: translate(0);
+  }
+}
+
+.header {
+  margin-bottom: 7rem;
+}
+
+.typing_header_container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.typing {
+  animation: fromSmallMargin 1.25s forwards;
+  padding-top: 25vh;
+}
+
+.not_typing {
+  animation: goToTop 2s;
+  padding-top: 10vh;
+}
