@@ -1,19 +1,15 @@
+@use "../../styles/variables.scss" as variable;
+
 $img_width_mobile: 300px;
 
 .section {
-  // padding: 2rem 0;
-  // overflow-y: scroll;
-  // text-align: center;
-  // display: flex;
-  // background-color: red;
-  // width: 80%;
+  margin: 4rem 0;
 }
 .div {
   position: fixed;
   top: 50%;
   width: $img_width_mobile;
   text-align: center;
-  color: red;
 }
 
 .background {
@@ -21,4 +17,24 @@ $img_width_mobile: 300px;
   margin: 1rem 0;
   height: 200px;
   width: $img_width_mobile;
+  transition: 0.5s;
+  &_gray {
+    box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.75);
+  }
+}
+
+.description {
+  font-style: italic;
+}
+
+.link {
+  font-weight: bold;
+  display: inline-block;
+  color: variable.$secondary-color;
+  margin-top: 2rem;
+  text-decoration: none;
+}
+
+.name {
+  font-size: 3rem;
 }

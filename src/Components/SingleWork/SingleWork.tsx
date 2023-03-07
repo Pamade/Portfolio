@@ -1,7 +1,7 @@
 import React, { useRef, useEffect, useState } from "react";
 import ujcappSmall from "../../images/ujcapp-small.JPG";
 import styles from "./SingleWork.module.scss";
-import { motion } from "framer-motion";
+import GrowingText from "../GrowingText/GrowingText";
 import { Link } from "react-router-dom";
 
 interface Props {
@@ -16,24 +16,27 @@ const SingleWork = ({ name, description }: Props) => {
   useEffect(() => {
     const observer = new IntersectionObserver(([entry]) => {
       const { isIntersecting, boundingClientRect } = entry;
-      console.log(boundingClientRect);
+
       const { top, bottom } = boundingClientRect;
       const windowHeight = window.innerHeight;
 
       setIsAtVerticalCenter(
-        isIntersecting && top < windowHeight / 2 && bottom > windowHeight / 2
+        isIntersecting &&
+          top - 100 < windowHeight / 2 &&
+          bottom + 70 > windowHeight / 2
       );
     });
     if (refPosition.current) {
       observer.observe(refPosition.current);
     }
+
     const handleScroll = () => {
       if (refPosition.current) {
         const { top, bottom } = refPosition.current.getBoundingClientRect();
         const windowHeight = window.innerHeight;
 
         setIsAtVerticalCenter(
-          top < windowHeight / 2 && bottom > windowHeight / 2
+          top - 100 < windowHeight / 2 && bottom + 70 > windowHeight / 2
         );
       }
     };
@@ -50,21 +53,24 @@ const SingleWork = ({ name, description }: Props) => {
     <div ref={refPosition} className={styles.section}>
       {isAtVerticalCenter && (
         <div className={styles.div}>
-          <motion.div
-            // style={{ position: "fixed", top: "50%", color: "red" }}
-            initial={{ opacity: 0, y: 0 }}
-            animate={{ opacity: 1, y: 5 }}
-            transition={{ duration: 0.5 }}
-            // viewport={{ once: true, amount: 0.8 }}
-            whileInView={{ width: "100%" }}
-          >
-            <h3>{name}</h3>
-            <p>{description}</p>
-            <Link to={`/${name.toLowerCase()}`}>VIEW PROJECT</Link>
-          </motion.div>
+          <h3 className={styles.name}>
+            <GrowingText text={name} />
+          </h3>
+          <p className={styles.description}>
+            <GrowingText text={description} />
+          </p>
+          <Link to={`/${name.toLowerCase()}`} className={styles.link}>
+            <GrowingText text={"VIEW PROJECT"} />
+          </Link>
         </div>
       )}
-      <div className={styles.background}></div>
+      <div
+        className={`${
+          isAtVerticalCenter
+            ? `${styles.background} ${styles.background_gray}`
+            : styles.background
+        }`}
+      ></div>
     </div>
   );
 };
