@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./personDescription.module.scss";
+import SectionHeading from "../Components/SectionHeading/SectionHeading";
 export const PersonDescription = ({
   displayName,
 }: {
@@ -7,7 +8,9 @@ export const PersonDescription = ({
 }) => {
   return (
     <div className={styles.content_header_mobile}>
-      {displayName && <Name />}
+      {displayName && (
+        <SectionHeading name="Patryk Mikołajczak" alignItems="flex-start" />
+      )}
       <p className={styles.description}>
         I am 20 years old from Poland. I have been studying as a hobbyist since
         2020. I graduated from high school with the profile of IT technican. I
@@ -17,8 +20,6 @@ export const PersonDescription = ({
     </div>
   );
 };
-
-export const Name = () => <p className={styles.name}>Patryk Mikołajczak</p>;
 
 export const H2Heading = () => {
   return (

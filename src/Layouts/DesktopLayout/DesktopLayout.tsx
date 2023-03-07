@@ -1,21 +1,21 @@
 import styles from "./DesktopLayout.module.scss";
 import Navigation from "../../Navigation/Navigation";
+import SectionHeading from "../../Components/SectionHeading/SectionHeading";
 import {
   H2Heading,
-  Name,
   PersonDescription,
 } from "../../PersonDescription/PersonDescription";
-import SectionHeading from "../../Components/SectionHeading/SectionHeading";
+
 const DesktopLayout = () => {
   return (
     <section id="desktop_layout">
       <H2Heading />
-      <Name />
+      <SectionHeading name="Patryk Mikołajczak" alignItems="flex-start" />
       <div className={styles.nav_about}>
         <Navigation />
         <PersonDescription displayName={false} />
       </div>
-      <SectionHeading name="Works" number="1" alignSelf="flex-end" />
+      <SectionHeading name="Works" alignItems="flex-end" />
     </section>
   );
 };

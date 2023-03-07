@@ -8,7 +8,7 @@ const MobileLayout = () => {
     <section id="mobile_layout">
       <PersonDescription displayName={true} />
       <Navigation />
-      <SectionHeading name="Works" number="1" alignSelf="flex-end" />
+      <SectionHeading name="Works" alignItems="flex-end" />
       <Works />
     </section>
   );
