@@ -35,7 +35,7 @@
   display: none;
 }
 
-html {
-  scroll-behavior: smooth;
-  transition: scroll-behavior 0.1s;
+.line {
+  padding-bottom: 1rem;
+  border-bottom: 4px solid variable.$main-color;
 }

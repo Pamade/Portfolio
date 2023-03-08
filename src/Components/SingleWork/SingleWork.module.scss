@@ -1,25 +1,29 @@
 @use "../../styles/variables.scss" as variable;
 
 $img_width_mobile: 300px;
-
+$img_width_desktop: 600px;
+$box-shadow-color: rgba(0, 0, 0, 0.75);
+$margin_for_box: 15vw;
 .section {
   margin: 4rem 0;
 }
 .div {
   position: fixed;
   top: 50%;
+  transform: translateY(-50%);
   width: $img_width_mobile;
   text-align: center;
 }
 
 .background {
-  background-image: url("../../images/ujcapp-small.JPG");
   margin: 1rem 0;
   height: 200px;
   width: $img_width_mobile;
+  background-size: cover;
+  background-position: center;
   transition: 0.5s;
   &_gray {
-    box-shadow: inset 0 0 0 100px rgba(0, 0, 0, 0.75);
+    box-shadow: inset 0 0 0 300px $box-shadow-color;
   }
 }
 
@@ -31,10 +35,56 @@ $img_width_mobile: 300px;
   font-weight: bold;
   display: inline-block;
   color: variable.$secondary-color;
-  margin-top: 2rem;
+  padding: 1rem 0;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .name {
-  font-size: 3rem;
+  font-size: 2.5rem;
+}
+
+@media (min-width: 1200px) {
+  .section {
+    margin: 8rem 0;
+  }
+
+  .background {
+    border-radius: 3px;
+    width: $img_width_desktop;
+    height: 500px;
+    &_gray {
+      box-shadow: inset 0 0 0 500px $box-shadow-color;
+      margin-right: $margin_for_box;
+    }
+  }
+  .middle {
+    margin-right: 0;
+    margin-left: $margin_for_box;
+  }
+  .div {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    margin: 0 auto;
+  }
+  .name {
+    font-size: 5rem;
+  }
+}
+.bg_full_hidden {
+  width: 0;
+  height: 0;
+}
+.bg_full_window {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  left: 0;
+  top: 0;
+  margin: 0;
+  transition: 0.5s;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.75);
+  background-size: cover;
+  z-index: 999;
 }

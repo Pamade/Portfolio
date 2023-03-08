@@ -1,0 +1,54 @@
+@use "../styles/variables.scss" as variable;
+
+@keyframes nameTransition {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.div {
+  height: 100vh;
+}
+.background {
+  width: 100vw;
+  height: 100vh;
+  box-shadow: inset 0 0 0 1000px rgba(12, 12, 0, 0.6);
+  display: flex;
+  background-size: cover;
+  justify-content: center;
+  align-items: center;
+  overflow-y: scroll;
+  transition: 0.3s;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
+  animation: nameTransition 1s;
+}
+.name {
+  transition: 0.5s;
+  font-size: 3.5rem;
+  color: darken(variable.$main-color, 5);
+  text-align: center;
+}
+
+.view_live {
+  text-decoration: none;
+  color: variable.$secondary-color;
+  font-weight: bold;
+}
+
+@media (min-width: 1200px) {
+  .name {
+    font-size: 7rem;
+  }
+  .view_live {
+    font-size: 1.8rem;
+  }
+}

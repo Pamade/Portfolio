@@ -29,7 +29,7 @@ const SectionHeading = ({ name, alignItems }: Props) => {
           )}
         </div>
         <motion.div
-          className={styles.line}
+          className="line"
           viewport={{ once: true, amount: 0.8 }}
           style={{ alignItems }}
           initial={{ width: 0 }}

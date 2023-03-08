@@ -5,7 +5,7 @@ import {
   H2Heading,
   PersonDescription,
 } from "../../PersonDescription/PersonDescription";
-
+import Works from "../../Works/Works";
 const DesktopLayout = () => {
   return (
     <section id="desktop_layout">
@@ -16,6 +16,7 @@ const DesktopLayout = () => {
         <PersonDescription displayName={false} />
       </div>
       <SectionHeading name="Works" alignItems="flex-end" />
+      <Works />
     </section>
   );
 };
