@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import { useContext } from "react";
 import ShowingTextEveryLetter from "../Components/ShowingTextEveryLetter/ShowingTextEveryLetter";
 import styles from "./header.module.scss";
 import { IsTypingInitial } from "../Context/InitialTypingContext";

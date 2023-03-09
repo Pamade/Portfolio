@@ -1,0 +1,40 @@
+@use "../../styles/variables.scss" as variable;
+
+.section {
+  width: 90%;
+  margin: 2rem auto;
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+.technologies_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.icon {
+  font-size: 3.5rem;
+  transition: 0.4s;
+  &:hover {
+    color: variable.$secondary-color;
+  }
+}
+
+.heading {
+  margin: 2rem 0;
+}
+.code_and_live_container {
+  display: flex;
+  gap: 5rem;
+}
+.code_icon {
+  color: variable.$main-color;
+  cursor: pointer;
+}
+
+@media (min-width: 1200px) {
+  .section {
+    width: 50%;
+    gap: 12.5rem;
+  }
+}

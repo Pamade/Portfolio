@@ -10,12 +10,16 @@ const DesktopLayout = () => {
   return (
     <section id="desktop_layout">
       <H2Heading />
-      <SectionHeading name="Patryk Mikołajczak" alignItems="flex-start" />
+      <SectionHeading
+        name="Patryk Mikołajczak"
+        alignItems="flex-start"
+        widthLine={30}
+      />
       <div className={styles.nav_about}>
         <Navigation />
         <PersonDescription displayName={false} />
       </div>
-      <SectionHeading name="Works" alignItems="flex-end" />
+      <SectionHeading name="Works" alignItems="flex-end" widthLine={30} />
       <Works />
     </section>
   );

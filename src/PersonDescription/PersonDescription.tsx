@@ -9,7 +9,11 @@ export const PersonDescription = ({
   return (
     <div className={styles.content_header_mobile}>
       {displayName && (
-        <SectionHeading name="Patryk Mikołajczak" alignItems="flex-start" />
+        <SectionHeading
+          name="Patryk Mikołajczak"
+          alignItems="flex-start"
+          widthLine={30}
+        />
       )}
       <p className={styles.description}>
         I am 20 years old from Poland. I have been studying as a hobbyist since

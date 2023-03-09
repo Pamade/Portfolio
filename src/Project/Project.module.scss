@@ -9,9 +9,6 @@
   }
 }
 
-.div {
-  height: 100vh;
-}
 .background {
   width: 100vw;
   height: 100vh;
@@ -25,6 +22,15 @@
 }
 
 .content {
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+  height: 100%;
+  justify-content: space-around;
+}
+
+.text_content {
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -42,6 +48,11 @@
   text-decoration: none;
   color: variable.$secondary-color;
   font-weight: bold;
+}
+
+.arrow {
+  display: block;
+  font-size: 1.5rem;
 }
 
 @media (min-width: 1200px) {

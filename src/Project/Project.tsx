@@ -1,11 +1,28 @@
 import React, { useState } from "react";
 import styles from "./Project.module.scss";
 import HoveredLine from "../Components/HoveredLine/HoveredLine";
+import SingleProjectPreview from "../Components/SingleProjectPreview/SingleProjectPreview";
+import { IconType } from "react-icons/lib/esm/iconBase";
+import { AiOutlineArrowDown } from "react-icons/ai";
+import { motion } from "framer-motion";
+
 interface Props {
   name: string;
   backgroundImg: string;
+  liveView: string;
+  technologiesIcons: IconType[];
+  description: string;
+  githubLink: string;
 }
-const Project = ({ name, backgroundImg }: Props) => {
+
+const Project = ({
+  name,
+  backgroundImg,
+  liveView,
+  technologiesIcons,
+  description,
+  githubLink,
+}: Props) => {
   const [isLinkHovered, setIsLinkHovered] = useState(false);
 
   return (
@@ -15,21 +32,42 @@ const Project = ({ name, backgroundImg }: Props) => {
         className={styles.background}
       >
         <div className={styles.content}>
-          <h2 className={styles.name}>{name}</h2>
-          <a
-            onMouseEnter={() => setIsLinkHovered(true)}
-            onMouseLeave={() => setIsLinkHovered(false)}
-            target="_blank"
-            href="https://ujccap-client.vercel.app/"
-            className={styles.view_live}
-            rel="noreferrer"
+          <div className={styles.text_content}>
+            <h2 className={styles.name}>{name}</h2>
+            <a
+              onMouseEnter={() => setIsLinkHovered(true)}
+              onMouseLeave={() => setIsLinkHovered(false)}
+              target="_blank"
+              href={liveView}
+              className={styles.view_live}
+              rel="noreferrer"
+            >
+              VIEW LIVE
+            </a>
+            <HoveredLine isLinkHovered={isLinkHovered} />
+          </div>
+
+          <motion.div
+            animate={{
+              y: [-10, 10, -10, -10],
+            }}
+            transition={{
+              duration: 5,
+              ease: "easeInOut",
+              times: [3, 2, 3, 2, 3],
+              repeat: Infinity,
+            }}
           >
-            VIEW LIVE
-          </a>
-          <HoveredLine isLinkHovered={isLinkHovered} />
+            <AiOutlineArrowDown className={styles.arrow} />
+          </motion.div>
         </div>
       </section>
-      {/* <section>//here div for technologies //description //go back</section> */}
+      <SingleProjectPreview
+        technologiesIcons={technologiesIcons}
+        description={description}
+        liveView={liveView}
+        githubLink={githubLink}
+      />
     </div>
   );
 };

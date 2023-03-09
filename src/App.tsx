@@ -1,15 +1,13 @@
 import "./styles/base.scss";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
 import { IsTypingInitial } from "./Context/InitialTypingContext";
 import Header from "./Header/Header";
 import DesktopLayout from "./Layouts/DesktopLayout/DesktopLayout";
 import MobileLayout from "./Layouts/MobileLayout/MobileLayout";
-import ujccap from "./images/ujccap.JPG";
-import brainQuest from "./images/brainQuest.JPG";
-import gameFinder from "./images/gameFinder.JPG";
-
 import Project from "./Project/Project";
+import Projects from "./ProjectsData/ProjectsData";
+
 function App() {
   const {
     state: { isInitialTyping },
@@ -32,18 +30,13 @@ function App() {
             </>
           }
         />
-        <Route
-          path="/ujccap"
-          element={<Project name="Ujccap" backgroundImg={ujccap} />}
-        />
-        <Route
-          path="/game-finder"
-          element={<Project name="Game Finder" backgroundImg={gameFinder} />}
-        />
-        <Route
-          path="/brain-quest"
-          element={<Project name="Brain Quest" backgroundImg={brainQuest} />}
-        />
+        {Projects.map(({ path, ...projectProps }) => (
+          <Route
+            key={path}
+            path={path}
+            element={<Project {...projectProps} />}
+          />
+        ))}
       </Routes>
     </div>
   );

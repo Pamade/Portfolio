@@ -4,14 +4,16 @@ import { motion } from "framer-motion";
 
 interface Props {
   name: string;
-  alignItems: "flex-start" | "flex-end";
+  alignItems?: "flex-start" | "flex-end";
+  className?: string;
+  widthLine: 30 | 100;
 }
 
-const SectionHeading = ({ name, alignItems }: Props) => {
+const SectionHeading = ({ name, alignItems, className, widthLine }: Props) => {
   const [isAnimationCompleted, setIsAnimationCompleted] = useState(false);
 
   return (
-    <section className={styles.section}>
+    <section className={`${className ? className : styles.section} `}>
       <div style={{ alignItems }} className={styles.container}>
         <div className={styles.text_container}>
           {isAnimationCompleted && (
@@ -33,7 +35,7 @@ const SectionHeading = ({ name, alignItems }: Props) => {
           viewport={{ once: true, amount: 0.8 }}
           style={{ alignItems }}
           initial={{ width: 0 }}
-          whileInView={{ width: "30%" }}
+          whileInView={{ width: widthLine + "%" }}
           onAnimationComplete={() => setIsAnimationCompleted(true)}
           transition={{ duration: 1 }}
         />
