@@ -6,6 +6,9 @@ import {
   PersonDescription,
 } from "../../PersonDescription/PersonDescription";
 import Works from "../../Works/Works";
+import Skills from "../../Skills/Skills";
+import Contact from "../../Contact/Contact";
+import MenuBottom from "../../Components/MenuBottom/MenuBottom";
 const DesktopLayout = () => {
   return (
     <section id="desktop_layout">
@@ -21,6 +24,9 @@ const DesktopLayout = () => {
       </div>
       <SectionHeading name="Works" alignItems="flex-end" widthLine={30} />
       <Works />
+      <Skills />
+      <Contact />
+      <MenuBottom variation="main-page" />
     </section>
   );
 };

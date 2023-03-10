@@ -6,7 +6,7 @@ import gameFinder from "../images/gameFinder.JPG";
 
 const Works = () => {
   return (
-    <section className={styles.section}>
+    <section id="work" className={styles.section}>
       <SingleWork
         description="Fullstack web app"
         name="UJCCAP"

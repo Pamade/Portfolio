@@ -1,6 +1,6 @@
-import React from "react";
 import styles from "./personDescription.module.scss";
 import SectionHeading from "../Components/SectionHeading/SectionHeading";
+import MotionBottomToTopSlide from "../Components/MotionBottomToTopSlide/MotionBottomToTopSlide";
 export const PersonDescription = ({
   displayName,
 }: {
@@ -15,12 +15,14 @@ export const PersonDescription = ({
           widthLine={30}
         />
       )}
-      <p className={styles.description}>
-        I am 20 years old from Poland. I have been studying as a hobbyist since
-        2020. I graduated from high school with the profile of IT technican. I
-        am a hardworking, independent and communicative person. I want to
-        develop my skills as a frontend / full stack developer
-      </p>
+      <MotionBottomToTopSlide>
+        <p className={styles.description}>
+          I am 20 years old from Poland. I have been studying as a hobbyist
+          since 2020. I graduated from high school with the profile of IT
+          technican. I am a hardworking, independent and communicative person. I
+          want to develop my skills as a frontend / full stack developer
+        </p>
+      </MotionBottomToTopSlide>
     </div>
   );
 };

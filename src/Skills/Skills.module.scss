@@ -1,0 +1,27 @@
+@use "../styles/variables.scss" as variable;
+.logos_container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 2rem;
+  transition: 0.3s;
+  &:hover {
+    color: variable.$secondary-color;
+  }
+}
+.section {
+  padding: 8rem 0;
+}
+@media (min-width: 760px) {
+  .logo {
+    font-size: 3.5rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .logo {
+    font-size: 5rem;
+  }
+}

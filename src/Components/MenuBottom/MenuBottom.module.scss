@@ -1,4 +1,8 @@
 @use "../../styles/variables.scss" as variable;
+
+.menu {
+  padding: 6rem 0;
+}
 .container {
   display: flex;
   justify-content: space-between;
@@ -27,4 +31,8 @@
 }
 .heading {
   margin: 0;
+}
+.icon {
+  font-size: 2rem;
+  color: variable.$main-color;
 }

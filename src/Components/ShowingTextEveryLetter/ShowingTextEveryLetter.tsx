@@ -64,8 +64,10 @@ interface PropsText {
 const DisplayText = ({ displayText, second }: PropsText) => {
   return (
     <p className={`${second ? styles.second : null}`}>
-      {displayText.map((item) => (
-        <span className={styles.span}>{item}</span>
+      {displayText.map((item, index) => (
+        <span key={index} className={styles.span}>
+          {item}
+        </span>
       ))}
     </p>
   );

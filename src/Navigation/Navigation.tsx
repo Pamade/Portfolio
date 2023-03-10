@@ -1,8 +1,8 @@
 import styles from "./navigation.module.scss";
-
+import MotionBottomToTopSlide from "../Components/MotionBottomToTopSlide/MotionBottomToTopSlide";
 interface Link {
   label: "Work" | "Skills" | "Contact";
-  path: "about-me" | "work" | "skills" | "contact";
+  path: "work" | "skills" | "contact";
 }
 
 const Links: Link[] = [
@@ -14,19 +14,28 @@ const Links: Link[] = [
 const Navigation = () => {
   const handleScroll = (path: Link["path"]) => {
     const element = document.getElementById(path);
-    element?.scrollIntoView({ behavior: "smooth" });
+    console.log(element);
+    // window.scrollTo(100)
+    element?.scrollIntoView();
   };
 
   return (
-    <nav className={styles.nav}>
-      <ul className={styles.list}>
-        {Links.map((link) => (
-          <li className={styles.item} onClick={() => handleScroll(link.path)}>
-            <span className={styles.span}>{link.label}</span>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <MotionBottomToTopSlide className={styles.nav}>
+      <nav>
+        <ul className={styles.list}>
+          {Links.map((link) => (
+            <li key={link.label} className={styles.item}>
+              <span
+                onClick={() => handleScroll(link.path)}
+                className={styles.span}
+              >
+                {link.label}
+              </span>
+            </li>
+          ))}
+        </ul>
+      </nav>
+    </MotionBottomToTopSlide>
   );
 };
 

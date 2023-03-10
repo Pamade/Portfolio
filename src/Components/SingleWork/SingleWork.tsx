@@ -51,8 +51,12 @@ const SingleWork = ({ name, description, backgroundImg }: Props) => {
   }, []);
 
   const handleClick = () => {
+    const nameRedefine = name.split(" ").join("-").toLowerCase();
     setIsGoToProjectClicked(true);
-    setTimeout(() => navigate(`/${name.toLowerCase()}`), 500);
+    window.scrollTo(0, 0);
+    setTimeout(() => {
+      navigate(`/${nameRedefine}`);
+    }, 800);
   };
 
   return (
@@ -62,37 +66,18 @@ const SingleWork = ({ name, description, backgroundImg }: Props) => {
           <h3 className={styles.name}>
             <GrowingText text={name} />
           </h3>
-          <p className={styles.description}>
+          <div className={styles.description}>
             <GrowingText text={description} />
-          </p>
-          <p
+          </div>
+          <div
             onMouseEnter={() => setIsLinkHovered(true)}
             onMouseLeave={() => setIsLinkHovered(false)}
             onClick={handleClick}
             className={styles.link}
           >
             <GrowingText text={"VIEW PROJECT"} />
-          </p>
+          </div>
           <HoveredLine isLinkHovered={isLinkHovered} />
-          {/* {isLinkHovered ? (
-            <motion.div
-              className="line"
-              style={{ margin: "0 auto" }}
-              viewport={{ once: true, amount: 0.8 }}
-              initial={{ width: 0 }}
-              whileInView={{ width: "10%" }}
-              transition={{ duration: 1 }}
-            />
-          ) : (
-            <motion.div
-              className="line"
-              style={{ margin: "0 auto" }}
-              viewport={{ once: true, amount: 0.8 }}
-              initial={{ width: 0 }}
-              whileInView={{ width: 0 }}
-              transition={{ duration: 1 }}
-            />
-          )} */}
         </div>
       )}
       <div
@@ -116,4 +101,4 @@ const SingleWork = ({ name, description, backgroundImg }: Props) => {
   );
 };
 
-export default React.memo(SingleWork);
+export default SingleWork;

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./Project.module.scss";
 import HoveredLine from "../Components/HoveredLine/HoveredLine";
 import SingleProjectPreview from "../Components/SingleProjectPreview/SingleProjectPreview";
@@ -46,7 +46,6 @@ const Project = ({
             </a>
             <HoveredLine isLinkHovered={isLinkHovered} />
           </div>
-
           <motion.div
             animate={{
               y: [-10, 10, -10, -10],
