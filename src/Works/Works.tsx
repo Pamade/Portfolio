@@ -3,6 +3,7 @@ import SingleWork from "../Components/SingleWork/SingleWork";
 import ujccap from "../images/ujccap.JPG";
 import brainQuest from "../images/brainQuest.JPG";
 import gameFinder from "../images/gameFinder.JPG";
+import digitalAgency from "../images/digitalAgency.JPG";
 
 const Works = () => {
   return (
@@ -13,12 +14,17 @@ const Works = () => {
         backgroundImg={ujccap}
       />
       <SingleWork
+        description="React tailwind app"
+        name="Digital Agency"
+        backgroundImg={digitalAgency}
+      />
+      <SingleWork
         description="React app"
         name="BRAIN QUEST"
         backgroundImg={brainQuest}
       />
       <SingleWork
-        description="REACT APP"
+        description="React app"
         name="GAME FINDER"
         backgroundImg={gameFinder}
       />
