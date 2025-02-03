@@ -17,10 +17,8 @@ export const PersonDescription = ({
       )}
       <MotionBottomToTopSlide>
         <p className={styles.description}>
-          I am 20 years old from Poland. I have been studying as a hobbyist
-          since 2020. I graduated from high school with the profile of IT
-          technican. I am a hardworking, independent and communicative person. I
-          want to develop my skills as a frontend / full stack developer
+          My name is Patryk, and I am 22 years old. I am currently studying Computer Science at the University of Economics and Human Sciences in Warsaw. 
+          I am passionate about developing both frontend and backend solutions. In my projects, I work with technologies such as React, TypeScript, Java Spring, and MySQL.
         </p>
       </MotionBottomToTopSlide>
     </div>
@@ -30,8 +28,7 @@ export const PersonDescription = ({
 export const H2Heading = () => {
   return (
     <h2 className={styles.h2}>
-      <span>I am 20 years old fullstack developer</span>{" "}
-      <span>from Poland</span> <span>looking for a first Job</span>
+      <span>Fullstack Developer</span>{" "}
     </h2>
   );
 };

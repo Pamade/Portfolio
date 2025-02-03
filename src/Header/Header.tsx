@@ -15,8 +15,8 @@ const Header = () => {
         }`}
       >
         <ShowingTextEveryLetter
-          textFirst="Fullstack"
-          textSecond="Developer"
+          textFirst="Patryk"
+          textSecond="Mikołajczak"
           heading="h1"
         />
       </div>

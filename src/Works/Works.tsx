@@ -1,17 +1,17 @@
 import styles from "./Works.module.scss";
 import SingleWork from "../Components/SingleWork/SingleWork";
-import ujccap from "../images/ujccap.JPG";
+import aksim from "../images/test.PNG"
 import brainQuest from "../images/brainQuest.JPG";
-import gameFinder from "../images/gameFinder.JPG";
 import digitalAgency from "../images/digitalAgency.JPG";
+import mogo from "../images/mogo.PNG";
 
 const Works = () => {
   return (
     <section id="work" className={styles.section}>
       <SingleWork
         description="Fullstack web app"
-        name="UJCCAP"
-        backgroundImg={ujccap}
+        name="Aksim"
+        backgroundImg={aksim}
       />
       <SingleWork
         description="React tailwind app"
@@ -24,9 +24,9 @@ const Works = () => {
         backgroundImg={brainQuest}
       />
       <SingleWork
-        description="React app"
-        name="GAME FINDER"
-        backgroundImg={gameFinder}
+        description="Static web site"
+        name="MoGo"
+        backgroundImg={mogo}
       />
     </section>
   );

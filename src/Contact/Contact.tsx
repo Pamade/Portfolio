@@ -2,6 +2,7 @@ import SectionHeading from "../Components/SectionHeading/SectionHeading";
 import styles from "./Contact.module.scss";
 import MotionBottomToTopSlide from "../Components/MotionBottomToTopSlide/MotionBottomToTopSlide";
 import { FiArrowDownRight } from "react-icons/fi";
+
 const Contact = () => {
   return (
     <section id="contact" className={styles.section}>
@@ -15,9 +16,7 @@ const Contact = () => {
         <p className={styles.text}>
           I will consider every Frontend and Fullstack proposal
         </p>
-        {/* <div className={styles.arrow_email}> */}
         <FiArrowDownRight className={styles.arrow} />
-        {/* </div> */}
         <a className={styles.email} href="mailto:mikolajczakkontakt@gmail.com">
           mikolajczakkontakt@gmail.com
         </a>
