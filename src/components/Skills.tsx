@@ -33,8 +33,8 @@ export default function Skills() {
     <section className="py-20 sm:py-32 px-4 bg-surface/50">
       <div className="max-w-4xl mx-auto">
         <SectionHeading
-          title="Technologie, których używam"
-          subtitle="Narzędzia, które stosuję na co dzień"
+          title="Technologie których używam"
+          subtitle="Narzędzia które stosuję na co dzień"
         />
 
         <motion.div
