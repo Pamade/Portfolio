@@ -167,7 +167,7 @@ export default function ProjectPageClient({ project }: Props) {
               <a
                 href={project.liveUrl}
                 target="_blank"
-                rel="noopener noreferrer"
+                
                 className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent-gold text-background font-semibold rounded-xl hover:brightness-110 transition-all duration-200"
               >
                 <FiExternalLink className="w-4 h-4" />
@@ -177,7 +177,7 @@ export default function ProjectPageClient({ project }: Props) {
                 <a
                   href={project.githubUrl}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  
                   className="inline-flex items-center gap-2 px-5 py-2.5 border border-border text-foreground font-medium rounded-xl hover:bg-surface transition-all duration-200"
                 >
                   <FiGithub className="w-4 h-4" />
